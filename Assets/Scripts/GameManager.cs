@@ -20,6 +20,7 @@ public class GameManager : Singleton<GameManager>
     List<GameObject> targetPipes = new List<GameObject>();
 
     private Inventory inventory;
+    [SerializeField] private UI_Inventory uiInventory;
     void Awake()
     {
         InitSingleton(this);
@@ -33,6 +34,7 @@ public class GameManager : Singleton<GameManager>
         FindSubSystems();
 
         inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
     }
     void Start()
     {
